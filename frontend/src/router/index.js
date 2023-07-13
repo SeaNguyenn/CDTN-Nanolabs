@@ -71,14 +71,14 @@ const router = createRouter({
           component: () => import('@/views/pages/ProductPage.vue'),
         },
         {
-          path: '/blogs',
-          name: 'blogs',
-          component: () => import('@/views/pages/BlogPage.vue'),
+          path: '/payments',
+          name: 'payments',
+          component: () => import('@/views/pages/PaymentPage.vue'),
         },
         {
-          path: '/blogs/:blogId/edit',
-          name: 'blogEdit',
-          component: () => import('@/views/pages/BlogPage.vue'),
+          path: '/payments/:paymentId/edit',
+          name: 'paymentsEdit',
+          component: () => import('@/views/pages/PaymentPage.vue'),
         },
         {
           path: '/cart',
@@ -124,15 +124,15 @@ const router = createRouter({
 
 router.beforeEach((to,from,next) => {
 
-  const cookiesArray = document.cookie.split(';');
-  let cookieFlg = false;
-  for (let i = 0; i < cookiesArray.length; i++) {
-    let cookies = cookiesArray[i].split('=');
-    if (cookies[0].match(/XSRF-TOKEN/)) {
-      cookieFlg = true;
-      break;
-    }
-  }
+  // const cookiesArray = document.cookie.split(';');
+  // let cookieFlg = false;
+  // for (let i = 0; i < cookiesArray.length; i++) {
+  //   let cookies = cookiesArray[i].split('=');
+  //   if (cookies[0].match(/XSRF-TOKEN/)) {
+  //     cookieFlg = true;
+  //     break;
+  //   }
+  // }
 
   // const auth = authStore();
   // if (
